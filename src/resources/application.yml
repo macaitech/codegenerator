@@ -1,0 +1,39 @@
+server:
+	#端口号
+	port: 8888
+	#项目名，如果不设定，默认是 /
+	context-path: /code
+
+spring:
+
+    #数据源配置
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.zaxxer.hikari.HikariDataSource
+        poolName: codeGeneratorPool
+        #数据库连接地址
+        url: jdbc:mysql://localhost:3306/coder?useSSL=false&useUnicode=yes&characterEncoding=UTF8
+        #连接数据库用户名
+        username: root
+        #连接数据库密码
+        password: 12345678
+
+#mybatis配置
+mybatis:
+    config-location : classpath:config/mybatis/mybatis-config.xml
+    mapper-locations : classpath:config/mybatis/mapper/**/*.xml
+
+#日志配置
+logging:
+    level.com.macaitech: DEBUG
+    
+codeGenerator:
+
+    #系统标题
+    title: 代码生成器
+
+    #页大小
+    pageSize: 15
+
+    #百度地图ak
+    baiduMapAk: G2zm7GgGGesyLUEoUfVF2jheDGRrkecU
